@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+    <style>
+        body{
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        
+        #sobre {
+            text-align: justify;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Popins', sans-serif;
+        }
+
+        h3 {
+            font-weight: bold;
+            text-align: left;
+        }
+
+        header{
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            
+        }
+
+        /* Efeito hover suave nos links e cards */
+        a:hover, .contato a:hover{
+            color: #00bcd4;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+
+        .card:hover a {
+            color: #007ea7;
+        }
+
+        .card, a {
+            display: inline-block;
+            text-decoration: none;
+            color:#00bcd4;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: color 0.3s ease;
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        /* Animação de fade-in */
+        section {
+            animation: fadeIn 1s ease-in;
+        }
+
+        
+        h2 {
+            color: #333
+        }
+
+        .projetos {
+            display: flex;
+            flex-wrap:initial;
+            gap: 20px;
+        }
+        #projetos h3 {
+            font-size: 22px;
+            margin-top: 40px;
+            color: #00bcd4;
+            border-bottom: 2px solid #00bcd4;
+            padding-bottom: 5px;
+        }
+
+        #projetos h4 {
+            font-size: 18px;
+            margin: 0;
+            color: #333;
+        }
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: justify;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            font-size: 20px;
+            color: #333;
+        }
+
+        .card p {
+            flex: 1;
+            color: #555;
+            margin: 15px 0;
+        }
+
+        .card a i {
+            margin-right: 6px;
+        }
+
+        .card-img {
+            width: 50%;
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+
+        .contato a {
+            display: inline-block;
+            margin-right: 15px;
+            color:#333;
+            text-decoration: none;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+        }
+
+        @media (max-width:768px) {
+            .card {
+                width: 100%;
+            }
+        }
+
+        /* Keyframes da animação */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Estilo do botão hamburguer */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 30px;
+            color: white;
+            position: absolute;
+            top:20px;
+            right:20px;
+            cursor: pointer;
+        }
+
+        /* Estilo padrão do nav */
+        nav {
+            margin-top: 10px;
+        }
+
+        .contato a i {
+            margin-right: 8px;
+            color: #333;
+        }
+
+        .contato a:hover i {
+            color:#00bcd4;
+        }
+
+        #btnTopo{
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #00bcd4;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 12px 16px;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            display: none;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+
+        #btnTopo:hover{
+            background-color: #0097a7;
+        }
+
+        .btn-whatsapp {
+        display: inline-block;
+        background-color: #25D366;
+        color: white;
+        padding: 10px 18px;
+        border-radius: 30px;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 16px;
+        margin-top: 15px;
+        transition: background-color 0.3s ease;
+        }
+
+        .btn-whatsapp i {
+        margin-right: 8px;
+        font-size: 18px;
+        }
+
+        .btn-whatsapp:hover {
+        background-color: #1ebe5b;
+        }
+
+
+        /* MOBILE */
+
+        @media(max-width: 768px) {
+            nav {
+                display: none;
+                flex-direction: column;
+                background-color: #444;
+                padding: 10px 0;
+            }
+
+            nav a {
+                display: block;
+                padding: 10px;
+                border-top: 1px solid #555;
+                text-align: center;
+            }
+
+            .menu-toggle{
+                display: block;
+            }
+
+            nav.active{
+                display: flex;
+            }
+
+            .card{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<button onclick="scrollToTop()" id="btnTopo" title="Voltar ao topo">
+  ⬆️
+</button>
+
+<script>
+    // Mostrar o botão ao rolar a página
+  window.onscroll = function() {
+    const btn = document.getElementById("btnTopo");
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      btn.style.display = "block";
+    } else {
+      btn.style.display = "none";
+    }
+  };
+
+  // Função para rolar ao topo
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+<body>
+    
+    <header>
+        <h1>Thaysse Macêdo</h1>            
+        <nav id="nav">
+            <a href="#sobre">Sobre</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#contato">Contato</a>
+        </nav>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    </header>
+    
+    <section id="sobre">
+        <h2>Sobre Mim</h2>
+        <p>Sou estudante de Análise e Desenvolvimento de Sistemas pela Estácio e estou me dedicando ao aprimoramento contínuo em Desenvolvimento Web e de Software. Minhas principais áreas de estudo e prática incluem HTML5, CSS3, JavaScript, Python, SQL, Git e GitHub, buscando sempre aplicar esses conhecimentos em projetos práticos.</p>
+    </section>
+
+    <section id="projetos">
+        <h2>Meus Projetos</h2>
+
+        <!-- Automações -->
+        <h3> Automações </h3>
+        <div class="projetos">
+            <div class="card">
+                <img src="./img/imagem_bot.png" alt="Imagem do Bot de curtidas do Instagram" class="card-img">
+                <h4>Bot de Curtidas no Instagram</h4>
+                <p>Objetivo: Logar na conta do Instagram, curtir posts, comentar em publicações e em seguida fazer logout simulando o comportamento humano de forma repetitiva e em larga escala.</p>
+                <p>Tecnologia usada: Python com PyAutoGui</p>
+                <a href="https://github.com/SissiMacedo/bot_curtidas_instagram" target="_blank">
+                <i class="fab fa-github"></i> Ver Projeto
+                </a>
+            </div>
+
+            <div class="card">
+                <img src="./img/imagem_bot.png" alt="Imagem do Bot de curtidas do Instagram" class="card-img">
+                <h4>Bot de Curtidas no Instagram</h4>
+                <p>Objetivo: Logar na conta do Instagram, curtir posts, comentar em publicações e em seguida fazer logout simulando o comportamento humano de forma repetitiva e em larga escala.</p>
+                <p>Tecnologia usada: Python com PyAutoGui</p>
+                <a href="https://github.com/SissiMacedo/bot_curtidas_instagram" target="_blank">
+                <i class="fab fa-github"></i> Ver Projeto
+                </a>
+            </div>
+
+            <div class="card">
+                <img src="./img/imagem_bot.png" alt="Imagem do Bot de curtidas do Instagram" class="card-img">
+                <h4>Bot de Curtidas no Instagram</h4>
+                <p>Objetivo: Logar na conta do Instagram, curtir posts, comentar em publicações e em seguida fazer logout simulando o comportamento humano de forma repetitiva e em larga escala.</p>
+                <p>Tecnologia usada: Python com PyAutoGui</p>
+                <a href="https://github.com/SissiMacedo/bot_curtidas_instagram" target="_blank">
+                <i class="fab fa-github"></i> Ver Projeto
+                </a>
+            </div>
+        </div>
+
+        <!-- Desenvolvimento Web e de Software -->
+        <h3> Desenvolvimento Web e de Software </h3>
+        <div class="projetos">
+            <div class="card">
+                <img src="./img/portfolio.png" alt="Portfolio" class="card-img">
+                <h4>Site de Portfólio</h4>
+                <p>Landing page pessoal com HTML, CSS e JavaScript responsivo.</p>
+                <a href="https://github.com/SissiMacedo/bot_curtidas_instagram" target="_blank">
+                <i class="fa-solid fa-code"></i> Ver Projeto
+                </a>
+            </div> 
+            
+            <div class="card">
+                <img src="./img/portfolio.png" alt="Portfolio" class="card-img">
+                <h4>Site de Portfólio</h4>
+                <p>Landing page pessoal com HTML, CSS e JavaScript responsivo.</p>
+                <a href="https://github.com/SissiMacedo/bot_curtidas_instagram" target="_blank">
+                <i class="fa-solid fa-code"></i> Ver Projeto
+                </a>
+            </div> 
+
+             <div class="card">
+                <img src="./img/portfolio.png" alt="Portfolio" class="card-img">
+                <h4>Site de Portfólio</h4>
+                <p>Landing page pessoal com HTML, CSS e JavaScript responsivo.</p>
+                <a href="https://github.com/SissiMacedo/bot_curtidas_instagram" target="_blank">
+                <i class="fa-solid fa-code"></i> Ver Projeto
+                </a>
+            </div>
+        </div>
+        
+        <!-- Análise de Dados-->
+        <h3> Análise de Dados </h3>
+        <div class="projetos">
+            <div class="card">
+                <img src="./img/dash_comercial2.png" alt="dashboard de vendas" class="card-img">
+                <h4>Dashboard Comercial</h4>
+                <p>Dashboard para a área de vendas desenvolvido para uma empresa fictícia. O Dashboard utiliza o Excel como fonte de dados e tem como objetivo o acompanhamento dos seguintes indicadores:</p>
+                <ul>
+                    <li>Faturamento & Quantidade Vendida por Mês & Ano</li>
+                    <li>Faturamento Total</li>
+                    <li>Produto Mais Vendido</li>
+                    <li>Vendas por Marca</li>
+                    <li>Faturamento por Continente</li>
+                </ul>
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiZDdlYWJiMGItNGE5YS00YjhkLWI3MjgtNDFjNjk3YmNhMTQxIiwidCI6IjU3NDY2N2M0LTI3NmQtNGE5OC1iNWE5LTcxMmY3NjNhZTZkNyJ9" target="_blank">
+                <i class="fa-solid fa-code"></i>Ver Projeto
+                </a>
+            </div> 
+            
+            <div class="card">
+                <img src="./img/dash_producao1.png" alt="dashboard de produção" class="card-img">
+                <h4>Dashboard de Produção</h4>
+                <p>Dashboard para a área de Produção desenvolvido para uma empresa fictícia. O Dashboard utiliza o Excel como fonte de dados e tem como objetivo o acompanhamento dos seguintes indicadores:</p>
+                <ul>
+                    <li>Total de Peças Produzidas</li>
+                    <li>Total de Peças Rejeitadas</li>
+                    <li>Número de Horas Produtivas</li>
+                    <li>Número de Horas Paradas</li>
+                    <li>Filtro por Operador & Mês</li>
+                    <li>Total de Peças Produzidas por Mês</li>
+                    <li>Disponibilidade %</li>
+                    <li>Qualidade %</li>
+                </ul>
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiOTU5NzY3YzUtNDg0MS00MjQ2LTkxYjMtMDc1OTI5Y2I1ZDZiIiwidCI6IjU3NDY2N2M0LTI3NmQtNGE5OC1iNWE5LTcxMmY3NjNhZTZkNyJ9" target="_blank">
+                <i class="fa-solid fa-code"></i>Ver Projeto
+                </a>
+            </div>  
+
+             <div class="card">
+                <img src="./img/dash_vendas1.png" alt="dashboard de vendas" class="card-img">
+                <h4>Dashboard de Vendas</h4>
+                <p>Dashboard para a área de Vendas desenvolvido para uma empresa fictícia. O Dashboard utiliza o Excel como fonte de dados e tem como objetivo o acompanhamento dos seguintes indicadores:</p>
+                <ul>
+                    <li>Faturamento Mensal</li>
+                    <li>Total de Lucro e Pedidos por Categoria</li>
+                    <li>Lucro Total por Marca</li>
+                    <li>Faturamento por Loja</li>
+                    <li>5 Maiores Clientes</li>
+                    <li>Faturamento Mensal x Meta</li>
+                    <li>Pedidos Mensais</li>
+                    <li>Devoluções Mensais</li>
+                </ul>
+                <a href="https://app.powerbi.com/reportEmbed?reportId=fd7a36c5-bb88-4a1f-8c1d-7be1c7c5824d&autoAuth=true&ctid=574667c4-276d-4a98-b5a9-712f763ae6d7" target="_blank">
+                <i class="fa-solid fa-code"></i>Ver Projeto
+                </a>
+            </div> 
+        </div>
+    </section>
+
+    <section id="contato" class="contato">
+        <h2>Contato</h2>
+        <p>Entre em contato comigo:</p>
+        <a href="mailto:thaysse09@gmail.com">
+        <i class="fas fa-envelope"></i> Email
+        </a>
+        <a href="https://github.com/SissiMacedo" target="_blank">
+        <i class="fab fa-github"></i> GitHub    
+        </a>
+        <a href="https://www.linkedin.com/in/thaysse-mac%C3%AAdo/" target="_blank">
+        <i class="fab fa-linkedin"></i> Linkedin
+        </a>
+        <a href="https://wa.me/5585988231662" target="_blank" class="btn-whatsapp">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+    
+    </section>
+    
+    <footer>
+        &copy; 2025 Thaysse Macêdo. Todos os direitos reservados.
+    </footer>
+    
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('nav');
+            nav.classList.toggle('active');
+        }
+    </script>
+    
+</body>
+</html>
